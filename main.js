@@ -25,9 +25,9 @@ function createWindow() {
         slashes: true
     }))
 
-    main_win.webContents.openDevTools()
+    //main_win.webContents.openDevTools()
     nowShowing.webContents.openDevTools()
-    meet.webContents.openDevTools()
+    //meet.webContents.openDevTools()
 
 
     main_win.on('closed', () => {

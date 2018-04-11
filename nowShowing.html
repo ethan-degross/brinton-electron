@@ -42,17 +42,24 @@
                 <h2 class="display-4">NOW SHOWING</h2>
             </div>
             <div class="owl-carousel owl-theme">
-                <div class="item imu_popup_open"><img src="https://img.youtube.com/vi/kJ33Xa1fNVM/hqdefault.jpg"></div>
-                <div class="item dance_popup_open"><img src="images/nextChapter.PNG"></div>
+                <div class="item video1_popup_open"><img src="https://img.youtube.com/vi/0BoUCnsqqvM/hqdefault.jpg"></div>
+                <div class="item arabian-magician_popup_open"><img src="https://img.youtube.com/vi/9sE2i7S1P_g/hqdefault.jpg"></div>
+                <div class="item imu_popup_open"><img src="https://img.youtube.com/vi/nZMJa0BBNSo/hqdefault.jpg"></div>
+
+                <div class="item lantern1_popup_open"><img src="images/brinton_magic_lantern_001.jpg"></div>
             </div>
 
-            <div id="imu_popup">
-                <iframe id="imu" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/kJ33Xa1fNVM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            <div id="video1_popup">
+                <iframe id="video1" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/0BoUCnsqqvM?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div id="dance_popup">
-                <video id="dance" class="pop_item" width="560" height="315">
-                    <source src="DanceVideo.mp4" type="video/mp4">
-                </video>
+            <div id="arabian-magician_popup">
+                <iframe id="arabian-magician" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/9sE2i7S1P_g?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="imu_popup">
+                <iframe id="imu" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/nZMJa0BBNSo?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="lantern1_popup">
+              <img width="50%" height="50%" src="images/brinton_magic_lantern_001.jpg">
             </div>
         </div>
 
@@ -60,7 +67,7 @@
             var ipcRenderer = require('electron').ipcRenderer;
             $(document).ready(function(){
 
-                var danceVid = document.getElementById('dance')
+                //var danceVid = document.getElementById('dance')
                 $('.owl-carousel').owlCarousel({
                     nav:false,
                     loop:true,
@@ -68,21 +75,29 @@
                     stagePadding:50,
                     center:true,
                 });
+                $('#video1_popup').popup({
+                    onopen: function() {
+                    }
+                });
                 $('#imu_popup').popup({
                     onopen: function() {
                     }
                 });
-                $('#dance_popup').popup({
+                $('#arabian-magician_popup').popup({
                     onopen: function() {
-                        danceVid.currentTime=0;
-                        danceVid.play();
+                    }
+                });
+                $('#lantern1_popup').popup({
+                    onopen: function() {
+                        //danceVid.currentTime=0;
+                        //danceVid.play();
                     },
                     onclose: function() {
-                        danceVid.pause()
+                        //danceVid.pause()
                     }
                 });
 
-                danceVid.onended = function(){$('#dance_popup').popup('hide')}
+                //danceVid.onended = function(){$('#dance_popup').popup('hide')}
 
                 new CircleType(document.getElementById('curved-3')).radius(900);
                 new CircleType(document.getElementById('curved-4')).radius(700);
