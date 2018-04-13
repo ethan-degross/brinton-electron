@@ -26,7 +26,7 @@ function createWindow() {
     }))
 
     //main_win.webContents.openDevTools()
-    nowShowing.webContents.openDevTools()
+    //nowShowing.webContents.openDevTools()
     //meet.webContents.openDevTools()
 
 

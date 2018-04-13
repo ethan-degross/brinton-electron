@@ -180,3 +180,8 @@ body {
   margin-right: auto;
   width:600px;
 }
+
+#lanternA, #lanternB{
+  margin-left:30%;
+  width:300px;
+}
