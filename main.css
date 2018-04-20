@@ -1,8 +1,17 @@
+html{
+  position: relative;
+  top:-8px;
+}
 body {
     background-color: black;
     overflow: hidden;
 }
-
+#embed-wrapper{
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     pointer-events: none;
+}
 .box {
 
 }
@@ -51,7 +60,7 @@ body {
 }
 
 .container h2 {
-    transform: translateY(-230px);
+    transform: translateY(-240px);
     font-weight: 500;
     font-size: 4em;
 }
@@ -66,7 +75,7 @@ body {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    transform: translateY(-215px)
+    transform: translateY(-235px)
 }
 
 .pop_item {
@@ -87,10 +96,10 @@ body {
 
 #buttons {
     height: 50px;
-    width: 630px;
+    width: 940px;
     margin-left: auto;
     margin-right: auto;
-    transform: translateY(-200px);
+    transform: translateY(-240px);
 }
 
 .line1 {
@@ -156,7 +165,7 @@ body {
     margin-right: auto;
 }
 #about-content{
-  margin-top: -100px;
+  margin-top: -130px;
 }
 .about-title{
   font-size:2em;
@@ -175,13 +184,22 @@ body {
   margin-right: auto;
 }
 #home-video-popup{
-  margin-top:-180px;
+  margin-top:-215px;
   margin-left: auto;
   margin-right: auto;
   width:600px;
 }
 
-#lanternA, #lanternB{
-  margin-left:30%;
+.clickSwitch{
+  margin-top: 0px;
   width:300px;
+}
+
+.popups p {
+	font-family: 'Montserrat';
+	color: white;
+	font-size: 1em;
+	margin-left: auto;
+	margin-right: auto;
+  text-align: center;
 }

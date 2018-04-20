@@ -24,10 +24,17 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
     }))
+	let map = new BrowserWindow({parent: main_win, show: false, fullscreen: true, frame: false})
+    map.loadURL(url.format({
+        pathname: path.join(__dirname, 'brintonMap/index.html'),
+        protocol: 'file:',
+        slashes: true
+    }))
 
     //main_win.webContents.openDevTools()
     //nowShowing.webContents.openDevTools()
     //meet.webContents.openDevTools()
+	  map.webContents.openDevTools()
 
 
     main_win.on('closed', () => {
@@ -50,6 +57,17 @@ function createWindow() {
         meet.show()
     })
 
+	ipcMain.on('closeMap', function() {
+        map.hide()
+    })
+
+	ipcMain.on('openMap', function() {
+        map.show()
+    })
+
+	ipcMain.on('reset', function() {
+		main_win.webContents.send('reset')
+	})
 }
 
 

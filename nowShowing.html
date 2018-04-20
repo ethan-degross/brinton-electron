@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link rel="stylesheet" href="main.css">
 
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- jQuery first -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
@@ -26,7 +27,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+		<script src="jquery.ui.touch-punch.min.js"></script>
 
         <script>if (window.module) module = window.module;</script>
         <title>Brinton Entertainment</title>
@@ -49,67 +50,75 @@
                 <h2 class="display-4">NOW SHOWING</h2>
             </div>
             <div class="owl-carousel owl-theme">
-              <div class="item video1_popup_open"><img src="images/video1.jpg"></div>
-              <div class="item video2_popup_open"><img src="images/video2.png"></div>
-              <div class="item video3_popup_open"><img src="images/video3.png"></div>
-              <div class="item video4_popup_open"><img src="images/video4.jpg"></div>
-              <div class="item video5_popup_open"><img src="images/video5.jpg"></div>
-              <div class="item video6_popup_open"><img src="images/video6.jpg"></div>
-              <div class= "item lanternA_popup_open"><img id="image" src="images/lanternA1.jpg" /></div>
+              <div class= "item lanternA_popup_open"><img id="image" src="images/lanternA%20(1).jpg" /></div>
               <div class= "item lanternB_popup_open"><img id="image" src="images/lanternB%20(1).jpg" /></div>
-
-
-
-
+			  <div class= "item lanternC_popup_open"><img id="image" src="images/lanternC%20(1).jpg" /></div>
+			  <div class= "item lanternD_popup_open"><img id="image" src="images/lanternD%20(1).jpg" /></div>
+			  <div class= "item lanternE_popup_open"><img id="image" src="images/lanternE%20(1).jpg" /></div>
+			  <div class= "item lanternF_popup_open"><img id="image" src="images/lanternF%20(1).jpg" /></div>
+			  <div class= "item lanternG_popup_open"><img id="image" src="images/lanternG%20(1).jpg" /></div>
             </div>
 
-
-            <div id="video1_popup">
-                <iframe id="video1" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/9sE2i7S1P_g?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+            <div class="popups" id="lanternA_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="A" src="images/lanternA%20(1).jpg">
             </div>
-            <div id="video2_popup">
-                <iframe id="video2" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/nZMJa0BBNSo?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+            <div  class="popups" id="lanternB_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="B" src="images/lanternB%20(1).jpg">
             </div>
-            <div id="video3_popup">
-                <iframe id="video3" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/0BoUCnsqqvM?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+			<div  class="popups" id="lanternC_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="C" src="images/lanternC%20(1).jpg">
             </div>
-            <div id="video4_popup">
-                <iframe id="video4" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/T0REZ-lvDTE?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+			<div  class="popups" id="lanternD_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="D" src="images/lanternD%20(1).jpg">
             </div>
-            <div id="video5_popup">
-                <iframe id="video5" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/0BoUCnsqqvM?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+			<div  class="popups" id="lanternE_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="E" src="images/lanternE%20(1).jpg">
             </div>
-            <div id="video6_popup">
-                <iframe id="video6" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/HoCZvtSiW_Q?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
+			<div  class="popups" id="lanternF_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="F" src="images/lanternF%20(1).jpg">
             </div>
-            <div id="arabian-magician_popup">
-                <iframe id="arabian-magician" class="pop_item" width="560" height="315" src="https://www.youtube.com/embed/rkF8i__Jv5g?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div id="lanternA_popup">
-              <img width="auto" height="25%" class="clickSwitch" id="lanternA" src="images/lanternA1.jpg">
-            </div>
-            <div id="lanternB_popup">
-              <img width="auto" height="25%" class="clickSwitch" id="lanternB" src="images/lanternB%20(1).jpg">
+			<div  class="popups" id="lanternG_popup">
+			<p>TAP IMAGE FOR MORE</p>
+              <img width="auto" height="25%" class="clickSwitch" id="G" src="images/lanternG%20(1).jpg">
             </div>
         </div>
 
         <script>
+		var setNum = {
+			'A':2,
+			'B':5,
+			'C':13,
+			'D':11,
+			'E':8,
+			'F':12,
+			'G':14,
+		}
+		
         //$("#image").fadeOut(5000, function() {
-              $(".clickSwitch").draggable();
-              $('#lanternA_popup').draggable();//testing if drag works on touchscreen when using the popup
-
-              $(".clickSwitch").click(function() {
-                console.log(this.id)
-                if( $("#lanternA").attr('src') == "images/lanternA1.jpg"){
-                  $("#lanternA").attr("src", "images/lanternA2.jpg");
-                }else{
-                  $("#lanternA").attr("src", "images/lanternA1.jpg");
-                }
-              });
-
-        //});
-
-
+        /*$(".clickSwitch").draggable({
+			containment: 'window',
+		});*/
+		
+		var i=2;
+		$(".clickSwitch").click(function() {
+			var setLet = this.id;
+			if (i>setNum[setLet]) {
+				i=1;
+				$('#'+setLet).attr("src", 'images/lantern'+setLet+'%20('+i.toString()+').jpg')
+				i++;
+			}
+			else {
+				$('#'+setLet).attr("src", 'images/lantern'+setLet+'%20('+i.toString()+').jpg')
+				i++;
+			}
+		});
+		//});
         </script>
 
         <script>
@@ -128,51 +137,47 @@
                 });
                 $('#lanternA_popup').popup({
                   onopen: function() {
-                  }
+					i=2;
+					$('#A').attr("src", 'images/lanternA%20(1).jpg')
+                  },
                 });
                 $('#lanternB_popup').popup({
                   onopen: function() {
+					i=2;
+					$('#B').attr("src", 'images/lanternB%20(1).jpg')
                   }
                 });
-                $('#lantern1_popup').popup({
+				$('#lanternC_popup').popup({
                   onopen: function() {
-                      //danceVid.currentTime=0;
-                  },
-                  onclose: function() {
-                      //danceVid.pause()
+					i=2;
+					$('#C').attr("src", 'images/lanternC%20(1).jpg')
                   }
                 });
-                $('#video1_popup').popup({
+				$('#lanternD_popup').popup({
                   onopen: function() {
-                      //video1.currentTime=0;
-                      //video1.play();
-                      //conosle.log("on open is woring")
-                  },
-                  onclose: function() {
-                      //danceVid.pause()
-                      //video1.pause();
+					i=2;
+					$('#D').attr("src", 'images/lanternD%20(1).jpg')
                   }
                 });
-                $('#video2_popup').popup({
-                    onopen: function() {
-                    }
+				$('#lanternE_popup').popup({
+                  onopen: function() {
+					i=2;
+					$('#E').attr("src", 'images/lanternE%20(1).jpg')
+                  }
                 });
-                $('#video3_popup').popup({
-                    onopen: function() {
-                    }
+				$('#lanternF_popup').popup({
+                  onopen: function() {
+					i=2;
+					$('#F').attr("src", 'images/lanternF%20(1).jpg')
+                  }
                 });
-                $('#video4_popup').popup({
-                    onopen: function() {
-                    }
+				$('#lanternG_popup').popup({
+                  onopen: function() {
+					i=2;
+					$('#G').attr("src", 'images/lanternG%20(1).jpg')
+                  }
                 });
-                $('#video5_popup').popup({
-                    onopen: function() {
-                    }
-                });
-                $('#video6_popup').popup({
-                    onopen: function() {
-                    }
-                });
+                
 
                 //danceVid.onended = function(){$('#dance_popup').popup('hide')}
 
@@ -183,6 +188,10 @@
                     ipcRenderer.send('closeShowing');
                 }
             });
+			
+			window.onclick = function() {
+				ipcRenderer.send('reset');
+			}
         </script>
     </body>
 </html>
