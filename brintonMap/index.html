@@ -31,7 +31,7 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
       <!-- Include this library for mobile touch support (not tested) -->
       <script src="public/jqueryUiTouchPunch-0.2.2/jquery.ui.touch-punch.min.js"></script>
 	    <!-- Load Esri Leaflet from CDN -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.2/esri-leaflet.js"></script>
+      <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.2/esri-leaflet.js"></script>
       <!-- include json data points -->
       <script src="brintondata2.js"></script>
 
@@ -57,10 +57,11 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
 
   <body>
 
-    <img id="icon" src="../icon.png" width="75" height="75" style="position:fixed;">
+    <img id="icon" src="../icon.png" width="75" height="75" style="position:fixed; left:-20px;">
 
     <!-- provide the map with a div to live inside -->
-    <div id="map" style="width: 100%; height: 900px; position: absolute"></div>
+    <div id="map" style="width: 100%; height: 900px; position: absolute"><div id="map-description"><p>This map is derived from Brinton's Journal, which recorded screening locations, times, profits, and other notes.  Use the time-slider to see his movements over time.</p></div></div>
+
 
     <script>
       // set up with openstreetmaps
@@ -88,7 +89,7 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
 
 //here I use an esri tiled WMS layer, a tiled layer out on mapbox, and a GeoServer tiled map service. This is really for my own reference... PS the commas and "names = " stuff replaces variables. You call up all the layers in one spot
 
-	 var blanktile =  L.esri.tiledMapLayer({url: "https://gis.lib.uiowa.edu/gislib1/rest/services/williammorris/florencebasemaps2/MapServer"}),
+	 var blanktile =  L.esri.tiledMapLayer({url: "https://gis.lib.uiowa.edu/gislib1/rest/services/brinton/brintonmap/MapServer"}),
 	 grayscale = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmNzaGVwYXJkIiwiYSI6IjYwYjI0NzdmNDQwM2YzNTc1ODI2NWZhNTU1ZTVmNjY4In0.ct_UnOxwtV_WIGwzyG0Rxw', {id: 'mapbox.light', attribution: mbAttr}),
 	 dark = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmNzaGVwYXJkIiwiYSI6IjYwYjI0NzdmNDQwM2YzNTc1ODI2NWZhNTU1ZTVmNjY4In0.ct_UnOxwtV_WIGwzyG0Rxw', {id: 'mapbox.dark', attribution: mbAttr}),
 	 opengeo = L.tileLayer.wms('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}),
@@ -118,7 +119,8 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
       var map = L.map('map', {
 	  center: [37.2, -87],
 	  zoom: 6,
-	  layers: [grayscale]
+    zoomControl:false,
+	  layers: [blanktile]
 	  });
 
 
@@ -139,7 +141,17 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
         if (feature.properties) {
           var prop = feature.properties;
           // make a cool little html popup with properties
-            var popup = '<h3>'+prop['Venue']+'  '+prop['Town']+', '+prop['State']+'<br>'+prop['Month']+' '+prop['Day']+' '+prop['Year']+'</h3>'+'Amount Made: '+'$'+prop['Amount_Made']+'<br>'+'House take: '+prop['House_takes']+'% <br>'+'Notes: '+prop['Notes'];
+          if (prop['House_takes'] != "No Data"){
+    houseTakes = prop['House_takes'] +'%<br>';
+    }else{
+    houseTakes = prop['House_takes'] +'<br>';
+    }
+    if (prop['Amount_Made'] != "No Data"){
+    amount = '$'+prop['Amount_Made'] +'<br>';
+    }else{
+    amount = prop['Amount_Made'] +'<br>';
+    }
+          var popup = '<h3>'+prop['Venue']+'  '+prop['Town']+', '+prop['State']+'<br>'+prop['Month']+' '+prop['Day']+' '+prop['Year']+'</h3>'+'Amount Made: '+ amount +'House take: '+ houseTakes +'Notes: '+prop['Notes'];
             // add known info about event to the description
 
           // you must create a layer property on each feature or else
@@ -268,7 +280,7 @@ Thanks to University of Iowa's Digital Scholarship and Publishing Studio for hos
         }
       };
       var searchControl = L.control.fuseSearch(searchOptions);
-      map.addControl(searchControl);
+      //map.addControl(searchControl);
       searchControl.indexFeatures(brintondata, ['Town', 'Notes']);
 
       displayFeatures(brintondata, searchLayer);
@@ -326,7 +338,7 @@ pointToLayer: function (feature, latlng) {
 	  };
 
 			var baseMaps = {
-			"<strong>Layer List</strong>": blanktile
+			"<strong>Layer List</strong>": grayscale
 //			"Modern Map": grayscale,
 //			"opengeo": opengeo
 			};

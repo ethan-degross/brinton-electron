@@ -6,6 +6,17 @@ body {
     background-color: black;
     overflow: hidden;
 }
+#map-description{
+  width: 300px;
+  background-color: white;
+  z-index: 1000;
+  position: relative;
+  float: right;
+  margin-top: 50px;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
 #embed-wrapper{
      position: absolute;
      height: 100%;
@@ -96,7 +107,7 @@ body {
 
 #buttons {
     height: 50px;
-    width: 940px;
+    width: 940px;/*940 when map button is displayed*/
     margin-left: auto;
     margin-right: auto;
     transform: translateY(-240px);
